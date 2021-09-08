@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+		<title>SPF Appender</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="css/bulma-rtl.css" />
+		<link rel="stylesheet" href="css/main.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>	
+		<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&family=Rubik&display=swap" rel="stylesheet">
+		<link rel="shortcut icon" type="image/ico" href="images/favicon.ico"/>
+    </head>
+    <body>
+        <section class="section">
+            <div class="container">
+                <h1 class="title">
+                    SPF Appender
+                </h1>
+                <div class="columns">
+                    <div class="column is-6">
+                        <h2>Enter your existing SPF and the string you'd like to append to it</h2>
+
+                        <div id="enter-spf-field" class="field">
+                            <label class="label">Enter your current SPF</label>
+                            <div class="control">
+                                <input class="input" type="text" id="enter-spf-input" placeholder="Existing SPF Record" />
+                            </div>
+                        </div>
+
+                        <div id="enter-domain-field" class="field hidden">
+                            <label class="label">Enter your domain</label>
+                            <div class="control">
+                                <input class="input" type="text" id="enter-domain-input" placeholder="example.com" />
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <button id="show-domain-field" class="button grouped-button">Pull from my domain</button>
+                            <button id="generate-spf" class="button grouped-button">I don't have an SPF</button>
+                            <button id="poll-domain" class="button is-primary hidden">Poll my records</button>
+                        </div>
+
+                        <div class="field">
+                            <label class="label">String to append</label>
+                            <div class="control">
+                                <input class="input" type="text" id="string-input" placeholder="String value" />
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="control">
+                                <input class="input" type="text" disabled="disabled" id="working-spf" />
+                            </div>
+                        </div>
+
+
+                        <div class="field">
+                            <div class="control">
+                                <button id="do-append" class="button is-link">Do it</button>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="column is-6">
+                        <h2>Your new spf</h2>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script type="text/javascript" src="js/main.js"></script>
+    </body>
+</html>

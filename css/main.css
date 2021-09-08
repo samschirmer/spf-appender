@@ -1,0 +1,11 @@
+button.grouped-button {
+    display: inline-block;
+}
+
+label {
+    padding-top: 12px;
+}
+
+.hidden {
+    display: none;
+}
