@@ -1,3 +1,9 @@
+document.addEventListener('DOMContentLoaded',function(){
+    const urlSearchParams = new URLSearchParams(window.location.search);
+    const params = Object.fromEntries(urlSearchParams.entries());
+    if (params['s']) { document.getElementById('string-input').value = params['s']; }
+ });
+
 const buttons = new Map([
     ['closeDomainModal', document.getElementById('close-domain-modal')],
     ['showDomainModal', document.getElementById('show-domain-modal')],
