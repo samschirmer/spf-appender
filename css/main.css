@@ -1,5 +1,23 @@
+div#main-container {
+    min-height: 70vh;
+}
+
+p.blurb {
+    max-width: 600px;
+}
+
 button.grouped-button {
+    margin-top: 12px;
     display: inline-block;
+    color: #3a51bb;
+    border: 1px solid #3a51bb;
+}
+
+button.grouped-button:first-child {
+    display: inline-block;
+    background-color: #3a51bb;
+    color: #fff;
+    border: 1px solid #3a51bb;
 }
 
 label {
@@ -8,4 +26,57 @@ label {
 
 .hidden {
     display: none;
+}
+
+textarea {
+    height: 4em !important;
+}
+
+div#spf-appender-content {
+    max-width: 650px;
+    margin: auto;
+}
+
+div#domain-overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(100,100,100,0.8);
+}
+
+div#domain-modal {
+    top: 25vh;
+    margin: auto;
+    width: 90%;
+    max-width: 450px;
+    z-index: 100;
+}
+
+textarea#destination {
+    cursor: pointer !important;
+}
+
+textarea#destination:active, textarea#destination.clicked {
+    border: 1px solid #3a51bb;
+}
+
+p.copied {
+    font-weight: 700;
+    margin-top: 8px;
+    font-size: 16px;
+    color: #3a51bb;
+}
+
+div#footer {
+    position: static;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 36px auto;
+    text-align: center;
+    width: 100%;
+    color: #3a51bb;
+    font-weight: 700;
 }

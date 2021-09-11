@@ -14,14 +14,18 @@
     </head>
     <body>
         <section class="section">
-            <div class="container">
+            <div class="container" id="main-container">
                 <h1 class="title">
                     SPF Appender
                 </h1>
+                <p class="blurb">
+                    This tool allows you to easily add a string value/inclusion to an SPF record.
+                    If that record exists on your domain already, this tool can pull it for you, or you can manually enter it into the box.
+                    <br /> <br />
+                    If you don't have one at all, a boilerplate one can be generated for you.
+                </p>
                 <div class="columns">
                     <div class="column is-6">
-                        <h2>Enter your existing SPF and the string you'd like to append to it</h2>
-
                         <div id="enter-spf-field" class="field">
                             <label class="label">Enter your current SPF</label>
                             <div class="control">
@@ -29,17 +33,10 @@
                             </div>
                         </div>
 
-                        <div id="enter-domain-field" class="field hidden">
-                            <label class="label">Enter your domain</label>
-                            <div class="control">
-                                <input class="input" type="text" id="enter-domain-input" placeholder="example.com" />
-                            </div>
-                        </div>
-
+                        <label><strong>OR</strong></label>
                         <div class="field">
-                            <button id="show-domain-field" class="button grouped-button">Pull from my domain</button>
+                            <button id="show-domain-modal" class="button grouped-button">Pull from my domain</button>
                             <button id="generate-spf" class="button grouped-button">I don't have an SPF</button>
-                            <button id="poll-domain" class="button is-primary hidden">Poll my records</button>
                         </div>
 
                         <div class="field">
@@ -50,21 +47,60 @@
                         </div>
                         <div class="field">
                             <div class="control">
-                                <input class="input" type="text" disabled="disabled" id="working-spf" />
+                                <textarea class="input" type="text" disabled="disabled" id="working-spf"></textarea>
                             </div>
                         </div>
 
 
                         <div class="field">
                             <div class="control">
-                                <button id="do-append" class="button is-link">Do it</button>
+                                <button id="do-append" disabled=disabled class="button is-link">Append Record</button>
                             </div>
                         </div>
 
                     </div>
                     <div class="column is-6">
-                        <h2>Your new spf</h2>
+                        <div id="result" class="hidden">
+                            <label class="label">Your new SPF (click to copy)</label>
+                            <textarea class="input" type="text" id="destination"></textarea>
+                            <p class="copied hidden is-success" id="copied">Copied!</p>
+                        </div>
                     </div>
+                </div>
+
+                <div id="domain-overlay" class="hidden">
+                    <div id="domain-modal" class="card">
+                        <header class="card-header">
+                            <p class="card-header-title">Enter your domain</p>
+                            <button class="card-header-icon" id="close-domain-modal">
+                                <span class="icon">
+                                    <i class="fas fa-times" aria-hidden="true"></i>
+                                </span>
+                                </button>
+                        </header>
+                        <div class="card-content">
+                            <div class="content">
+                                <div id="enter-domain-field" class="field">
+                                    <div class="control">
+                                        <input class="input" type="text" id="enter-domain-input" placeholder="example.com" />
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <button id="poll-domain" class="button is-primary">Poll my records</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
+                </div>
+
+            </div>
+        </section>
+        <section class="section">
+            <div class="container">
+                <div id="footer">
+                    <a href="https://samschirmer.com">Free tool by Sam Schirmer</a>
+                     | 
+                    <a href="https://github.com/samschirmer/spf-appender">source</a>
                 </div>
             </div>
         </section>
